@@ -1,0 +1,93 @@
+package roshan;
+
+import java.util.Scanner;
+
+class Employ
+
+{
+
+    void display(String name,int age,String dept)
+
+    {
+
+        System.out.println("..............Engineer..............");
+
+        System.out.println("Engineer name      : "+name);
+
+        System.out.println("Age                : "+age);
+
+        System.out.println("Department         : "+dept);
+
+    }
+
+    void calcSalary(int salary,int DA,int HRA)
+
+    {	
+
+    	salary=salary+((salary*DA/100)+(salary*HRA/100));
+
+    	System.out.println("Salary of Engineer : "+salary);
+
+    }
+
+}
+
+class Engineer1 extends Employ
+
+{
+
+    void calcSalary(int salary,int DA,int HRA)
+
+    {
+
+        super.calcSalary(salary,DA,HRA);
+
+    }
+
+}
+
+public class Overide
+
+{
+
+	public static void main(String[] args)
+
+	{
+
+		Engineer1 obj = new Engineer1();
+
+		Scanner sc = new Scanner(System.in);
+
+    	System.out.print("Enter Engineer Name : ");
+
+    	String name=sc.nextLine();
+
+    	System.out.print("Enter age : ");
+
+    	int age=sc.nextInt();
+
+    	sc.nextLine();
+
+    	System.out.print("Enter department : ");
+
+    	String dept=sc.next();
+
+    	System.out.print("Enter employee base salary : ");
+
+    	int salary=sc.nextInt();
+
+    	System.out.print("Enter DA % :");
+
+    	int DA=sc.nextInt();
+
+    	System.out.print("Enter HRA % : ");
+
+    	int HRA=sc.nextInt();
+
+        obj.display(name,age,dept);
+
+        obj.calcSalary(salary,DA,HRA);
+
+	}
+
+}
